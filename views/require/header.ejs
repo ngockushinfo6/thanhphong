@@ -1,0 +1,80 @@
+<header>
+
+    <section class="top-info pri-bg-color">
+        <div class="container">
+            <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="col-xs-12 col-sm-6">
+                    <div class="social-icons">
+                        <ul class="list-inline">
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 text-right">
+                    <div class="search-top">
+                        <form role="search" method="get" class="search-form" action="<%= cf.url %>">
+                            <label>
+                                <span class="screen-reader-text">Search for:</span>
+                                <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+                            </label>
+                            <input type="submit" class="search-submit" value="Search" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="top-bar">
+        <div class="container">
+            <div class="row top-head-2">
+                <div class="col-sm-4 logo text-left">
+                    <a href="<%= cf.url %>" class="custom-logo-link" rel="home" aria-current="page">
+                        <img width="170" height="90" src="<%= cf.logo %>" class="custom-logo" alt="<%= cf.logoText %>" decoding="async" /></a>
+                    <div class="site-title">
+                        <a href="<%= cf.url %>">
+                            <%= cf.logoText %>
+                        </a>
+                    </div>
+                    <div class="site-description">
+                        <%= cf.description %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.end of container -->
+    </section>
+    <!-- /.end of section -->
+    <section class="main-nav nav-two  sticky-header">
+        <div class="container">
+            <nav id="site-navigation" class="main-navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><!-- Primary Menu -->
+                    <div id="nav-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="menu-menu-1-container">
+                    <ul id="primary-menu" class="menu">
+                        <li id="menu-item-1" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1">
+                            <a href="<%= cf.url %>">
+                                Home
+                            </a>
+                        </li>
+                        <% genre.forEach(item => { %>
+                            <li id="menu-item-<%= item.id %>" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-<%= item.id %>">
+                                <a href="<%= cf.url %>/category/<%= item.slug %>">
+                                    <%= item.name %>
+                                </a>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            </nav>
+            <!-- #site-navigation -->
+        </div>
+    </section>
+
+</header>

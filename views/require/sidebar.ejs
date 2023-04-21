@@ -1,0 +1,65 @@
+<div class="col-sm-3">
+    <div id="secondary" class="widget-area" role="complementary">
+        <aside id="block-3" class="widget widget_block">
+            <div class="wp-block-group is-layout-flow">
+                <div class="wp-block-group__inner-container"></div>
+            </div>
+        </aside>
+        <aside id="block-4" class="widget widget_block">
+            <div class="wp-block-group is-layout-flow">
+                <div class="wp-block-group__inner-container">
+                    <ul class="wp-block-latest-posts__list wp-block-latest-posts">
+                        <% posts.forEach(item => { 
+                            const postURL = `${cf.url}/posts/${item.slug}`; 
+                            %>
+                            <li>
+                                <a class="wp-block-latest-posts__post-title" href="<%= postURL %>">
+                                    <%= item.title %>
+                                </a>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <aside id="block-5" class="widget widget_block">
+            <div class="wp-block-group is-layout-flow">
+                <div class="wp-block-group__inner-container">
+                    <h2 class="wp-block-heading">Archives</h2>
+
+
+                    <ul class="wp-block-archives-list wp-block-archives">
+                        <li><a href='https://tmzenium.com/2023/04/'>April 2023</a></li>
+                        <li><a href='https://tmzenium.com/2023/03/'>March 2023</a></li>
+                        <li><a href='https://tmzenium.com/2023/02/'>February 2023</a></li>
+                        <li><a href='https://tmzenium.com/2023/01/'>January 2023</a></li>
+                        <li><a href='https://tmzenium.com/2022/12/'>December 2022</a></li>
+                        <li><a href='https://tmzenium.com/2022/11/'>November 2022</a></li>
+                        <li><a href='https://tmzenium.com/2022/10/'>October 2022</a></li>
+                        <li><a href='https://tmzenium.com/2022/09/'>September 2022</a></li>
+                        <li><a href='https://tmzenium.com/2022/08/'>August 2022</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <aside id="block-6" class="widget widget_block">
+            <div class="wp-block-group is-layout-flow">
+                <div class="wp-block-group__inner-container">
+                    <h2 class="wp-block-heading">Categories</h2>
+
+
+                    <ul class="wp-block-categories-list wp-block-categories">
+                        <% genre.forEach(item => { %>
+                            <li class="cat-item cat-item-<%= item.id %>">
+                                <a href="<%= cf.url %>/category/<%= item.slug %>">
+                                    <%= item.name %>
+                                </a>
+                            </li>
+                            <% }); %>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- #secondary -->
+</div>
